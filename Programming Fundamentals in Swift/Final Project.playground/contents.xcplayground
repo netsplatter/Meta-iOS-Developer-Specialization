@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='macos' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Part 1 - Create the bank account'/>
+        <page name='Part 2 - Define the bank account operations '/>
+        <page name='Part 3 - Manage the bank account'/>
+    </pages>
+</playground>

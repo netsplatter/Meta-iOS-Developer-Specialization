@@ -14,6 +14,6 @@
         <page name='11. Practice using functions'/>
         <page name='12. Practice writing succinctly expressive functions'/>
         <page name='13. Practice using closures'/>
-        <page name='14. Use functions to modularize a program '/>
+        <page name='14. Use functions to modularize a program'/>
     </pages>
 </playground>
