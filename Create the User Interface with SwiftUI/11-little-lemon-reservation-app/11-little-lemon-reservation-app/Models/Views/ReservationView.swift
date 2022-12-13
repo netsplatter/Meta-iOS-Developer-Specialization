@@ -9,7 +9,6 @@ struct ReservationView: View {
         ScrollView {
             VStack {
                 LittleLemonLogo()
-                    .padding(.top, -25)
                 
                 if restaurant.city.isEmpty {
                     VStack {

@@ -1,7 +1,6 @@
 import SwiftUI
 
-struct RestaurantLocation: Identifiable {
-    let id: UUID = UUID()
+struct RestaurantLocation: Hashable {
     var city: String
     var state: String
     var number: String

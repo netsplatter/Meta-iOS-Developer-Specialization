@@ -5,7 +5,7 @@ struct LocationsView: View {
     var body: some View {
         VStack {
             LittleLemonLogo()
-                .padding(.top, 25)
+                .padding(.top, 50)
             
             Text(model.displayingReservationForm ? "Reservation Details" : "Select a Location")
                 .padding([.leading, .trailing], 40)
@@ -14,7 +14,7 @@ struct LocationsView: View {
                 .cornerRadius(20)
             
             NavigationView {
-                List(model.restaurants) { restaurant in
+                List(model.restaurants, id: \.self) { restaurant in
                     NavigationLink(destination: ReservationForm(restaurant)) {
                         RestaurantView(restaurant)
                     }

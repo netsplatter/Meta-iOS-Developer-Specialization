@@ -37,7 +37,7 @@ struct ReservationForm: View {
                                   formatter: NumberFormatter())
                         .keyboardType(.numberPad)
                         .onChange(of: party) { value in
-                            if value == 0 { party = 1}
+                            if value == 0 { party = 1 }
                         }
                     }
                     
@@ -90,22 +90,16 @@ struct ReservationForm: View {
                         .padding([.top, .bottom], 20)
                     }
                     
-                    HStack {
-                        Spacer()
-                        
-                        Button(action: {
-                            validateForm()
-                        }, label: {
-                            Text("CONFIRM RESERVATION")
-                        })
-                        .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .cornerRadius(20)
-                        .padding(.top, 10)
-                        
-                        Spacer()
-                    }
+                    Button(action: {
+                        validateForm()
+                    }, label: {
+                        Text("CONFIRM RESERVATION")
+                    })
+                    .padding(.init(top: 10, leading: 30, bottom: 10, trailing: 30))
+                    .foregroundColor(.white)
+                    .background(Color.blue)
+                    .cornerRadius(20)
+                    .padding(.top, 10)
                 }
             }
             .padding(.top, -40)
