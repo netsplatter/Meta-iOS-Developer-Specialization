@@ -97,3 +97,20 @@ repeat {
     default: break
     }
 } while isSystemOpened
+
+
+enum Table {
+  case Indoors
+  case Outdoors
+  var description: String {
+    switch self {
+    case .Indoors:
+      return "Use circular tables"
+    case .Outdoors:
+      return "Use rectangular tables"
+    }
+  }
+}
+
+let table = Table.Indoors
+print(table.description)
