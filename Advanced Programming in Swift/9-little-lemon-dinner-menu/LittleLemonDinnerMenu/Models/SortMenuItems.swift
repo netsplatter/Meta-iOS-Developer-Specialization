@@ -8,5 +8,5 @@
 enum SortMenuItems: String, CaseIterable {
     case mostPopular = "Most Popular"
     case price = "Price $-$$$"
-    case alphabet = "A-Z"
+    case descending = "A-Z"
 }

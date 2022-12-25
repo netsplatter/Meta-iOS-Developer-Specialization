@@ -8,25 +8,29 @@
 import SwiftUI
 
 struct MenuItemsView: View {
-    @StateObject var model = MenuViewModel()
+    @StateObject var model = MenuViewViewModel()
     @State var presentOptions = false
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                MenuItemView(category: .food, menuItems: model.foodMenuItems)
-                MenuItemView(category: .drink, menuItems: model.drinkMenuItems)
-                MenuItemView(category: .dessert, menuItems: model.dessertMenuItems)
+                ForEach(model.activeCategories, id: \.self) { category in
+                    switch category {
+                    case .food: MenuItemView(category: .food, menuItems: model.foodMenuItems)
+                    case .drink: MenuItemView(category: .drink, menuItems: model.drinkMenuItems)
+                    case .dessert: MenuItemView(category: .dessert, menuItems: model.dessertMenuItems)
+                    }
+                }
             }
             .navigationTitle("Menu")
             .toolbar {
-                Button(action:{ presentOptions = true }) {
+                Button(action: {presentOptions = true}) {
                     Image(systemName: "slider.horizontal.3")
                 }
             }
         }
         .sheet(isPresented: $presentOptions) {
-            MenuItemsOptionView()
+            MenuItemsOptionView().environmentObject(model)
         }
     }
 }
@@ -48,22 +52,25 @@ struct MenuItemView: View {
             
             LazyVGrid(columns: gridItemLayout, spacing: 20) {
                 ForEach(menuItems) { menuItem in
-                    VStack {
-                        Image(menuItem.image)
-                            .resizable()
-                            .aspectRatio(1, contentMode: .fill)
-                            .frame(width: UIScreen.main.bounds.width / 3.5, height: UIScreen.main.bounds.width / 3.5)
-                        
-                        Text(menuItem.title)
-                            .font(.body)
-                            .lineLimit(2)
-                            .multilineTextAlignment(.center)
-                        
-                        
-                        Text("$\(menuItem.price)")
-                            .font(.headline)
-                            .foregroundColor(.secondary)
+                    NavigationLink(destination: MenuItemDetailsView(item: menuItem)) {
+                        VStack {
+                            Image(menuItem.image)
+                                .resizable()
+                                .aspectRatio(1, contentMode: .fill)
+                                .frame(width: UIScreen.main.bounds.width / 3.5, height: UIScreen.main.bounds.width / 3.5)
+                            
+                            Text(menuItem.title)
+                                .font(.body)
+                                .lineLimit(2)
+                                .multilineTextAlignment(.center)
+                            
+                            
+                            Text("$\(menuItem.price)")
+                                .font(.headline)
+                                .foregroundColor(.secondary)
+                        }
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .padding([.leading, .trailing], 20)

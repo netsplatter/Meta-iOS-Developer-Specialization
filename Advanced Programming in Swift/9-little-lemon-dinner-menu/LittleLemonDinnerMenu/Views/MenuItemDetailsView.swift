@@ -8,13 +8,37 @@
 import SwiftUI
 
 struct MenuItemDetailsView: View {
+    let item: MenuItem
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image(item.image)
+                .padding()
+            
+            Text("Price:")
+                .fontWeight(.bold)
+            Text("\(item.price)")
+                .padding(.bottom, 5)
+            
+            Text("Ordered:")
+                .fontWeight(.bold)
+            Text("\(item.ordersCount)")
+                .padding(.bottom, 5)
+            
+            Text("Ingredients:")
+                .fontWeight(.bold)
+            ForEach(item.ingredients, id: \.self) { ingredient in
+                Text(ingredient.rawValue)
+            }
+            
+            Spacer()
+        }
+        .navigationTitle(item.title)
     }
 }
 
 struct MenuItemDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuItemDetailsView()
+        MenuItemDetailsView(item: MenuViewViewModel().foodMenuItems[0])
     }
 }
