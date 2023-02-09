@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Customer" representedClassName="Customer" syncable="YES">
+        <attribute name="email" optional="YES"/>
+        <attribute name="fullName" optional="YES"/>
+        <relationship name="toDish" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Dish" inverseName="consumedBy" inverseEntity="Dish"/>
+    </entity>
+    <entity name="Dish" representedClassName="Dish" syncable="YES">
+        <attribute name="name" optional="YES"/>
+        <attribute name="price" optional="YES"/>
+        <attribute name="size" optional="YES"/>
+        <relationship name="consumedBy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Customer" inverseName="toDish" inverseEntity="Customer"/>
+        <relationship name="fromCustomer" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Customer"/>
+    </entity>
+</model>
