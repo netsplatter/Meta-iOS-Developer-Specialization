@@ -7,13 +7,28 @@ import SwiftUI
 
 
 struct DisplayDish: View {
-    @ObservedObject private var dish:Dish
-    init(_ dish:Dish) {
+    @ObservedObject private var dish: Dish
+    init(_ dish: Dish) {
         self.dish = dish
     }
     
-    var body: some View {        
-        EmptyView()
+    var body: some View {
+        VStack {
+            HStack {
+                Text(dish.name ?? "")
+                    .padding([.top, .bottom], 7)
+                
+                Spacer()
+                
+                Text(dish.formatPrice())
+                    .font(.system(.callout, design: .monospaced))
+            }
+            
+            HStack {
+                Text(dish.size ?? "")
+                Spacer()
+            }
+        }
         .contentShape(Rectangle()) // keep this code
     }
 }

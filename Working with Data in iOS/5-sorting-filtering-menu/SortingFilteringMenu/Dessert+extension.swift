@@ -34,7 +34,6 @@ extension Dessert {
         request.returnsObjectsAsFaults = true
         return request
     }
-        
     
     class func deleteAll(_ context:NSManagedObjectContext) {
         let request = Dessert.request()
@@ -207,6 +206,4 @@ extension Dessert {
 
         Dessert.saveDatabase(viewContext)
     }
-    
-    
 }

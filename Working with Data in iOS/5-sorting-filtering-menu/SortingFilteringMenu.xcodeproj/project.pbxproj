@@ -16,7 +16,6 @@
 		417BF4042923854B00AA4CC2 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417BF4032923854B00AA4CC2 /* Persistence.swift */; };
 		417BF40F2923864600AA4CC2 /* SortingFilteringMenu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 417BF40D2923864600AA4CC2 /* SortingFilteringMenu.xcdatamodeld */; };
 		419393C12931049B00D63FE3 /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419393C02931049B00D63FE3 /* FetchedObjects.swift */; };
-		41A511392936351400297C3D /* Customer+extension2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A511382936351400297C3D /* Customer+extension2.swift */; };
 		41EF5E52292F99C90023590C /* PlaceHolderDessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF5E51292F99C90023590C /* PlaceHolderDessert.swift */; };
 		41EF5E54292FA95D0023590C /* Dessert+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EF5E53292FA95D0023590C /* Dessert+extension.swift */; };
 /* End PBXBuildFile section */
@@ -32,7 +31,6 @@
 		417BF4032923854B00AA4CC2 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		417BF40E2923864600AA4CC2 /* MyApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyApp.xcdatamodel; sourceTree = "<group>"; };
 		419393C02931049B00D63FE3 /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
-		41A511382936351400297C3D /* Customer+extension2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Customer+extension2.swift"; sourceTree = "<group>"; };
 		41EF5E51292F99C90023590C /* PlaceHolderDessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderDessert.swift; sourceTree = "<group>"; };
 		41EF5E53292FA95D0023590C /* Dessert+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dessert+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +74,6 @@
 				417BF4032923854B00AA4CC2 /* Persistence.swift */,
 				417BF40D2923864600AA4CC2 /* SortingFilteringMenu.xcdatamodeld */,
 				41EF5E53292FA95D0023590C /* Dessert+extension.swift */,
-				41A511382936351400297C3D /* Customer+extension2.swift */,
 				419393C02931049B00D63FE3 /* FetchedObjects.swift */,
 				417BF4002923854B00AA4CC2 /* Preview Content */,
 			);
@@ -168,7 +165,6 @@
 				2708BE2229974E8700ABBBC7 /* Customer+CoreDataClass.swift in Sources */,
 				417BF40F2923864600AA4CC2 /* SortingFilteringMenu.xcdatamodeld in Sources */,
 				417BF3FD2923854A00AA4CC2 /* ContentView.swift in Sources */,
-				41A511392936351400297C3D /* Customer+extension2.swift in Sources */,
 				419393C12931049B00D63FE3 /* FetchedObjects.swift in Sources */,
 				417BF3FB2923854A00AA4CC2 /* SortingFilteringMenuApp.swift in Sources */,
 			);
