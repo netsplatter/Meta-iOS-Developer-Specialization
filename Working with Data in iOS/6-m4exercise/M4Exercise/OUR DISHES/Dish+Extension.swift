@@ -17,22 +17,13 @@ extension Dish {
         } catch {
             print("Error saving data: \(error)")
         }
-        
-        // delete all Dish data
-//        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Dish")
-//        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-//
-//        do {
-//            try context.execute(deleteRequest)
-//        } catch let error as NSError {}
     }
     
     static func isDuplicate(_ item: MenuItem, _ context: NSManagedObjectContext) -> Bool {
         let fetchRequest: NSFetchRequest<Dish> = Dish.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "name == %@", item.title)
-
+        
         do {
-            print(item.title)
             let results = try context.fetch(fetchRequest)
             if results.count > 0 {
                 print("Dish with name '\(item.title)' already exists in database")
@@ -41,7 +32,7 @@ extension Dish {
         } catch {
             print("Error fetching data: \(error)")
         }
-
+        
         return false
     }
 }

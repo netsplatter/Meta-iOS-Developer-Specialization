@@ -13,13 +13,9 @@ class DishesModel: ObservableObject {
         do {
             let (data, _) = try await urlSession.data(from: url)
             let fullMenu = try JSONDecoder().decode(JSONMenu.self, from: data)
-            
-            for item in fullMenu.menu {
-                menuItems.append(item)
-            }
+            menuItems = fullMenu.menu
             
             // populate Core Data
-            Dish.deleteAll(coreDataContext)
             Dish.createDishesFrom(menuItems: menuItems, coreDataContext)
         }
         catch { }
